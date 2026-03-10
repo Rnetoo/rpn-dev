@@ -41,7 +41,7 @@
             <img class="loader-logo-img"
                  src="assets/images/rlogo.png"
                  alt="Logo RPN"
-                 width="80" height="80">
+                 width="180" height="180">
         </div>
 
         <p class="loader-name">Rômulo Pereira Neto</p>
@@ -135,7 +135,7 @@
             clearTimeout(safetyTimeout);
             // Aguarda um mínimo de 800ms para não piscar em conexões rápidas
             const elapsed = performance.now();
-            const delay   = Math.max(0, 800 - elapsed);
+            const delay   = Math.max(0, 1300 - elapsed);
             setTimeout(exitLoader, delay);
         }, { once: true });
     }
