@@ -83,6 +83,7 @@
 
         // Experiência
         'exp.eyebrow':              { pt: 'Trajetória',         en: 'Journey' },
+        'exp.showMore':             { pt: 'Ver experiências anteriores', en: 'See previous experience' },
         'exp.title.line1':          { pt: 'Experiência',        en: 'Professional' },
         'exp.title.line2':          { pt: 'profissional.',      en: 'experience.' },
         'exp.current':              { pt: '● Atual',            en: '● Current' },
