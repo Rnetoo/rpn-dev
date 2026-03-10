@@ -956,16 +956,20 @@ body:has(#cursor-dot) button { cursor: none; }
     display: none;
 }
 
-/* Estado revelado — entra com transição */
+/* Estado revelado — entra com animação de fade + slide */
 .tl-item--revealed {
-    display: grid; /* mesmo display do .tl-item original */
-    opacity: 1;
-    transform: translateX(0);
+    display: grid;
+    opacity: 0;
+    transform: translateX(-16px);
     pointer-events: auto;
     visibility: visible;
-    transition:
-        opacity   0.5s var(--ease-out),
-        transform 0.5s var(--ease-out);
+    animation: tl-fade-slide 0.5s var(--ease-out) forwards;
+}
+@keyframes tl-fade-slide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Botão "Ver mais" */
@@ -989,6 +993,13 @@ body:has(#cursor-dot) button { cursor: none; }
         opacity      0.3s var(--ease-out),
         transform    0.3s var(--ease-out);
 }
+@media (max-width: 600px) {
+    .tl-expand-btn {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
 .tl-expand-btn:hover {
     background: var(--accent);
     color: #fff;
@@ -1009,8 +1020,8 @@ body:has(#cursor-dot) button { cursor: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tl-item--hidden   { opacity: 1 !important; transform: none !important; pointer-events: auto !important; visibility: visible; }
-    .tl-item--revealed { transition: none; }
+    .tl-item--hidden   { display: none !important; }
+    .tl-item--revealed { animation: none; opacity: 1; transform: none; }
 }
 
 .tl-marker { display: flex; flex-direction: column; align-items: center; }

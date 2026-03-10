@@ -92,18 +92,10 @@
 
             hiddenItems.forEach(function (item, index) {
                 setTimeout(function () {
-                    // Aplica estado inicial antes de mostrar
-                    // para a transição partir do ponto correto
-                    item.style.opacity   = '0';
-                    item.style.transform = 'translateX(-16px)';
                     item.classList.remove('tl-item--hidden');
-
-                    // Força reflow para o browser registrar o estado inicial
-                    void item.offsetHeight;
-
                     item.classList.add('tl-item--revealed');
-                    item.style.opacity   = '';
-                    item.style.transform = '';
+                    // Delay escalonado via animation-delay
+                    item.style.animationDelay = '0ms';
                 }, index * 100);
             });
 
