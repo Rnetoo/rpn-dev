@@ -1,0 +1,226 @@
+/* ═══════════════════════════════════════════════════════════
+   TOKENS.CSS — Design System "Liquid Interface"
+   Portfólio v2 — Rômulo Pereira Neto
+   ───────────────────────────────────────────────────────────
+   Todas as variáveis CSS globais do projeto.
+   Separadas em: cores (dark/light), tipografia,
+   espaçamento, radii, sombras e easings.
+
+   Os temas são trocados alterando data-theme no <html>.
+   Isso evita classes utilitárias repetidas — basta mudar
+   uma variável e todo o sistema se atualiza.
+═══════════════════════════════════════════════════════════ */
+
+/* ── TEMA ESCURO — Sunset Neon ────────────────────────── */
+:root,
+[data-theme="dark"] {
+
+    /* Fundos em camadas */
+    --bg-base:      #0b0c10;
+    --bg-surface:   #111217;
+    --bg-elevated:  #161821;
+    --bg-glass:     rgba(17, 18, 23, 0.70);
+    --bg-glass-2:   rgba(255, 255, 255, 0.04);
+
+    /* Gradientes de profundidade aplicados ao body via theme.css */
+    --bg-grad-1: radial-gradient(1200px 800px at 10% -10%, rgba(249, 115, 22, 0.10), transparent 60%);
+    --bg-grad-2: radial-gradient(900px 700px at 90% 10%,  rgba(234, 88, 12, 0.08), transparent 60%);
+    --bg-grad-3: radial-gradient(1000px 800px at 50% 120%, rgba(251, 146, 60, 0.06), transparent 70%);
+
+    /* Tinta */
+    --ink:          #f1f5f9;
+    --ink-mid:      #fde8d0;
+    --ink-muted:    #94a3b8;
+    --ink-invert:   #0b0c10;
+
+    /* Acento: laranja neon → âmbar */
+    --accent:       #f97316;
+    --accent-alt:   #fb923c;
+    --accent-grad:  linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%);
+    --accent-glow:  rgba(249, 115, 22, 0.30);
+    --accent-soft:  rgba(249, 115, 22, 0.12);
+
+    /* Bordas */
+    --border:       rgba(255, 255, 255, 0.08);
+    --border-focus: #f97316;
+    --border-hover: rgba(249, 115, 22, 0.45);
+
+    /* Estados */
+    --success:  #22c55e;
+    --error:    #ef4444;
+    --warning:  #f59e0b;
+
+    /* Sombras */
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md:   0 4px 20px rgba(0,0,0,0.6);
+    --shadow-lg:   0 16px 48px rgba(0,0,0,0.7);
+    --shadow-glow: 0 0 40px rgba(249, 115, 22, 0.22);
+
+    /* Aliases de texto */
+    --text-primary: var(--ink);
+    --text-muted:   var(--ink-muted);
+
+    /* Navbar */
+    --nav-bg:     rgba(11, 12, 16, 0.82);
+    --nav-border: rgba(255,255,255,0.06);
+
+    /* Input */
+    --input-bg:     rgba(255,255,255,0.04);
+    --input-border: rgba(255,255,255,0.1);
+}
+
+/* ── TEMA CLARO — Liquid Graphite ─────────────────────── */
+[data-theme="light"] {
+
+    /* Fundos */
+    --bg-base:      #f5f7ff;
+    --bg-surface:   #ffffff;
+    --bg-elevated:  #eef1fb;
+    --bg-glass:     rgba(255, 255, 255, 0.78);
+    --bg-glass-2:   rgba(0, 0, 0, 0.03);
+
+    /* Sem gradientes de profundidade no tema claro */
+    --bg-grad-1: none;
+    --bg-grad-2: none;
+    --bg-grad-3: none;
+
+    /* Tinta */
+    --ink:          #0f172a;
+    --ink-mid:      #475569;
+    --ink-muted:    #94a3b8;
+    --ink-invert:   #f1f5f9;
+
+    /* Acento: graphite principal → steel secundário */
+    --accent:       #2b2f3a;
+    --accent-alt:   #4b5563;
+    --accent-grad:  linear-gradient(135deg, #2b2f3a 0%, #6b7280 100%);
+    --accent-glow:  rgba(43, 47, 58, 0.18);
+    --accent-soft:  rgba(43, 47, 58, 0.08);
+
+    /* Bordas */
+    --border:       rgba(0, 0, 0, 0.07);
+    --border-focus: #2b2f3a;
+    --border-hover: rgba(43, 47, 58, 0.35);
+
+    /* Estados */
+    --success:  #16a34a;
+    --error:    #dc2626;
+    --warning:  #d97706;
+
+    /* Sombras */
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md:   0 4px 20px rgba(0,0,0,0.1);
+    --shadow-lg:   0 16px 48px rgba(0,0,0,0.14);
+    --shadow-glow: 0 0 40px rgba(43, 47, 58, 0.10);
+
+    /* Aliases de texto */
+    --text-primary: var(--ink);
+    --text-muted:   var(--ink-muted);
+
+    /* Navbar */
+    --nav-bg:     rgba(245, 247, 255, 0.88);
+    --nav-border: rgba(0,0,0,0.06);
+
+    /* Input */
+    --input-bg:     rgba(0,0,0,0.02);
+    --input-border: rgba(0,0,0,0.1);
+}
+
+/* ── TIPOGRAFIA ───────────────────────────────────────── */
+:root {
+    /* Fontes */
+    --font-display: 'Clash Display', 'Georgia', serif;
+    --font-body:    'Cabinet Grotesk', 'system-ui', sans-serif;
+    --font-mono:    'Fira Code', 'Courier New', monospace;
+
+    /* Escala tipográfica modular (razão 1.25) */
+    --text-xs:   0.64rem;   /* 10.24px */
+    --text-sm:   0.8rem;    /* 12.8px  */
+    --text-base: 1rem;      /* 16px    */
+    --text-lg:   1.25rem;   /* 20px    */
+    --text-xl:   1.563rem;  /* 25px    */
+    --text-2xl:  1.953rem;  /* 31.25px */
+    --text-3xl:  2.441rem;  /* 39px    */
+    --text-4xl:  3.052rem;  /* 48.8px  */
+    --text-5xl:  3.815rem;  /* 61px    */
+    --text-hero: clamp(3.5rem, 8vw, 7rem);
+
+    /* Pesos */
+    --fw-light:    300;
+    --fw-regular:  400;
+    --fw-medium:   500;
+    --fw-semibold: 600;
+    --fw-bold:     700;
+
+    /* Alturas de linha */
+    --lh-tight:   1.1;
+    --lh-heading: 1.2;
+    --lh-body:    1.7;
+}
+
+/* ── ESPAÇAMENTO ──────────────────────────────────────── */
+:root {
+    /* Escala de 4px */
+    --space-1:  0.25rem;   /* 4px  */
+    --space-2:  0.5rem;    /* 8px  */
+    --space-3:  0.75rem;   /* 12px */
+    --space-4:  1rem;      /* 16px */
+    --space-5:  1.25rem;   /* 20px */
+    --space-6:  1.5rem;    /* 24px */
+    --space-8:  2rem;      /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+    --space-32: 8rem;      /* 128px */
+
+    /* Seções */
+    --section-py: clamp(5rem, 10vh, 8rem);
+
+    /* Container */
+    --container-max: 1200px;
+    --container-px:  clamp(1.25rem, 5vw, 3rem);
+
+    /* Navbar */
+    --nav-height: 68px;
+}
+
+/* ── RADII ────────────────────────────────────────────── */
+:root {
+    --r-sm:   6px;
+    --r-md:   12px;
+    --r-lg:   20px;
+    --r-xl:   28px;
+    --r-2xl:  40px;
+    --r-full: 9999px;
+}
+
+/* ── EASINGS ──────────────────────────────────────────── */
+:root {
+    /* Spring: overshoots levemente — ideal para botões e cards */
+    --spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Ease-out suave: ideal para entradas de elementos */
+    --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Ease-in-out padrão */
+    --ease-io:   cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Durations */
+    --dur-fast:   150ms;
+    --dur-base:   250ms;
+    --dur-slow:   400ms;
+    --dur-xslow:  700ms;
+}
+
+/* ── Z-INDEX SYSTEM ───────────────────────────────────── */
+:root {
+    --z-below:   -1;
+    --z-base:     0;
+    --z-raised:   10;
+    --z-overlay:  100;
+    --z-navbar:   900;
+    --z-modal:    1000;
+    --z-cursor:   9999;
+}

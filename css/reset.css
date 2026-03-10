@@ -1,0 +1,178 @@
+/* ═══════════════════════════════════════════════════════════
+   RESET.CSS — Reset moderno + base global
+   ───────────────────────────────────────────────────────────
+   Baseado em Andy Bell's Modern CSS Reset, adaptado com:
+   - Suporte a prefers-reduced-motion
+   - Skip link acessível
+   - Focus visible estilizado
+   - Scrollbar customizada
+═══════════════════════════════════════════════════════════ */
+
+/* ── BOX SIZING ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── HTML / BODY ──────────────────────────────────────── */
+html {
+    /* Remove scroll suave global — só via JS em cliques de âncora
+       para não interferir com a roda do mouse */
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+
+    /* Sincroniza a cor de fundo com o tema para evitar flash branco
+       antes do CSS carregar */
+    background-color: var(--bg-base);
+    color: var(--ink);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--lh-body);
+    font-weight: var(--fw-regular);
+    background-color: var(--bg-base);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+
+    /* Transição de tema suave */
+    transition:
+        background-color 0.4s var(--ease-io),
+        color 0.3s var(--ease-io);
+}
+
+/* ── LISTAS ───────────────────────────────────────────── */
+ul, ol { list-style: none; }
+
+/* ── IMAGENS E MÍDIA ──────────────────────────────────── */
+img, video, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* ── INPUTS ───────────────────────────────────────────── */
+input, textarea, select, button {
+    font: inherit;
+}
+
+/* ── LINKS ────────────────────────────────────────────── */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── TEXTOS ───────────────────────────────────────────── */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* ── SELEÇÃO DE TEXTO ─────────────────────────────────── */
+::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
+}
+
+/* ── SCROLLBAR CUSTOMIZADA ────────────────────────────── */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ink-muted);
+    border-radius: var(--r-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* ── FOCUS VISIBLE ────────────────────────────────────── */
+/* Remove outline padrão do browser e substitui por um
+   estilo consistente com o design system.
+   :focus-visible só ativa quando o usuário navega
+   por teclado — não aparece em cliques com mouse. */
+:focus {
+    outline: none;
+}
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* ── SKIP LINK ────────────────────────────────────────── */
+/* Visível apenas quando recebe foco via Tab.
+   Permite que leitores de tela e usuários de teclado
+   pulem a navbar e vão direto ao conteúdo principal. */
+.skip-link {
+    position: fixed;
+    top: var(--space-4);
+    left: var(--space-4);
+    z-index: calc(var(--z-cursor) + 1);
+    padding: var(--space-3) var(--space-6);
+    background: var(--accent);
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.05em;
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-lg);
+
+    /* Escondido fora da tela — aparece com foco */
+    transform: translateY(-200%);
+    transition: transform 0.25s var(--ease-out);
+}
+.skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ── SR-ONLY ──────────────────────────────────────────── */
+/* Conteúdo visível apenas para leitores de tela.
+   Não usar display:none — isso esconde de tudo, inclusive screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── PREFERS REDUCED MOTION ───────────────────────────── */
+/* Respeita a preferência de sistema operacional do usuário.
+   Desabilita TODAS as animações e transições.
+   Manter isso atualizado conforme novas animações são adicionadas. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:        0.01ms !important;
+        animation-iteration-count: 1      !important;
+        transition-duration:       0.01ms !important;
+        scroll-behavior:           auto   !important;
+    }
+
+    /* Exceção: transição de tema pode ser instantânea mas não
+       deve piscar — mantemos um mínimo de 50ms */
+    body {
+        transition-duration: 50ms !important;
+    }
+
+    /* Remove cursor customizado em reduced motion */
+    #cursor-dot,
+    #cursor-ring {
+        display: none !important;
+    }
+}

@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS.CSS — Motion & Reveal
+   ───────────────────────────────────────────────────────────
+   Animações de entrada orquestradas via IntersectionObserver
+   (controladas pelo animations.js).
+
+   Convenção de classes:
+   .reveal              → estado inicial (invisível, deslocado)
+   .reveal.visible      → estado final (visível, na posição)
+   .reveal-delay-N      → atraso de entrada (N = 1..5)
+   .reveal-left/.right  → entrada lateral
+   .reveal-scale        → entrada com escala
+═══════════════════════════════════════════════════════════ */
+
+/* ── REVEAL — estado inicial ──────────────────────────── */
+/* Elementos com .reveal começam invisíveis e levemente
+   deslocados para baixo. O JS adiciona .visible ao entrar
+   na viewport, disparando a transição. */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity  0.7s var(--ease-out),
+        transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Entrada pela esquerda */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-28px);
+    transition:
+        opacity   0.7s var(--ease-out),
+        transform 0.7s var(--ease-out);
+}
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Entrada pela direita */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(28px);
+    transition:
+        opacity   0.7s var(--ease-out),
+        transform 0.7s var(--ease-out);
+}
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Entrada com escala */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition:
+        opacity   0.6s var(--ease-out),
+        transform 0.6s var(--spring);
+}
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ── DELAYS DE ENTRADA ────────────────────────────────── */
+/* Stagger: cada elemento filho atrasa um pouco mais.
+   Usado dentro de grids e listas para efeito cascata. */
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+
+/* ── ANIMAÇÕES DE ENTRADA DO HERO ─────────────────────── */
+/* Orquestradas por animation-delay — executam uma vez
+   quando a página carrega, sem depender do IntersectionObserver */
+
+.hero-badge {
+    animation: hero-fade-up 0.6s var(--ease-out) 0.1s both;
+}
+.hero-name {
+    animation: hero-fade-up 0.8s var(--ease-out) 0.25s both;
+}
+.hero-role {
+    animation: hero-fade-up 0.7s var(--ease-out) 0.4s both;
+}
+.hero-tagline {
+    animation: hero-fade-up 0.7s var(--ease-out) 0.5s both;
+}
+.hero-ctas {
+    animation: hero-fade-up 0.7s var(--ease-out) 0.6s both;
+}
+.hero-meta {
+    animation: hero-fade-up 0.7s var(--ease-out) 0.7s both;
+}
+.hero-visual {
+    animation: hero-fade-in 1s var(--ease-out) 0.3s both;
+}
+
+@keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── SEÇÃO SOBRE ──────────────────────────────────────── */
+/* Stagger automático para filhos diretos do about-stats */
+.about-stat:nth-child(1) { transition-delay: 50ms;  }
+.about-stat:nth-child(2) { transition-delay: 150ms; }
+.about-stat:nth-child(3) { transition-delay: 250ms; }
+
+/* Chips entram em cascata */
+.about-chips .chip:nth-child(1)  { animation-delay: 0ms;   }
+.about-chips .chip:nth-child(2)  { animation-delay: 50ms;  }
+.about-chips .chip:nth-child(3)  { animation-delay: 100ms; }
+.about-chips .chip:nth-child(4)  { animation-delay: 150ms; }
+.about-chips .chip:nth-child(5)  { animation-delay: 200ms; }
+.about-chips .chip:nth-child(6)  { animation-delay: 250ms; }
+.about-chips .chip:nth-child(7)  { animation-delay: 300ms; }
+.about-chips .chip:nth-child(8)  { animation-delay: 350ms; }
+
+/* ── PROJETOS ─────────────────────────────────────────── */
+/* Cada item da lista de projetos: stagger manual */
+.project-item:nth-child(1) .project-card { transition-delay: 0ms; }
+.project-item:nth-child(2) .project-card { transition-delay: 80ms; }
+.project-item:nth-child(3) .project-card { transition-delay: 160ms; }
+
+/* ── TIMELINE ─────────────────────────────────────────── */
+/* Items entram com delay crescente */
+.tl-item:nth-child(1) { transition-delay: 0ms; }
+.tl-item:nth-child(2) { transition-delay: 100ms; }
+.tl-item:nth-child(3) { transition-delay: 200ms; }
+.tl-item:nth-child(4) { transition-delay: 300ms; }
+
+/* ── SKILLS ───────────────────────────────────────────── */
+.skill-group:nth-child(1) { transition-delay: 0ms; }
+.skill-group:nth-child(2) { transition-delay: 100ms; }
+.skill-group:nth-child(3) { transition-delay: 200ms; }
+
+/* ── EDUCAÇÃO ─────────────────────────────────────────── */
+.edu-card:nth-child(1) { transition-delay: 0ms; }
+.edu-card:nth-child(2) { transition-delay: 100ms; }
+.edu-card:nth-child(3) { transition-delay: 200ms; }
+
+/* ── TEMA — TRANSIÇÃO GLOBAL ──────────────────────────── */
+/* Quando o tema muda, superfícies e bordas transicionam juntas */
+.navbar,
+.skill-group,
+.project-card,
+.tl-card,
+.edu-card,
+.contact-form-wrap,
+.about-stat,
+.blog-placeholder {
+    transition:
+        background   0.4s var(--ease-io),
+        border-color 0.3s var(--ease-io),
+        box-shadow   0.4s var(--ease-io),
+        transform    0.4s var(--spring);
+}
+
+/* ── SEÇÃO ALTERNADA — fundo sutil ────────────────────── */
+/* Seções ímpares têm um leve shift de fundo para criar ritmo */
+.about,
+.skills,
+.blog {
+    background: var(--bg-glass-2);
+}
+
+/* ── PREFERS REDUCED MOTION ───────────────────────────── */
+/* Definido no reset.css — aqui só sobrescrevemos o que
+   o reset não cobre: animações específicas deste arquivo */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .hero-badge,
+    .hero-name,
+    .hero-role,
+    .hero-tagline,
+    .hero-ctas,
+    .hero-meta,
+    .hero-visual {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero-photo-ring,
+    .hero-photo-ring--outer,
+    .hero-card,
+    .hero-badge-dot,
+    .scroll-indicator-line,
+    .hero-orb {
+        animation: none;
+    }
+
+    .skill-bar-fill {
+        transition: width 0.3s linear;
+    }
+}

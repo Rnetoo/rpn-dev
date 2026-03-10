@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark" data-lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rômulo Pereira Neto — Front-End Developer</title>
+    <meta name="description"
+        content="Front-End Developer com formação em design. React, JavaScript e CSS — interfaces acessíveis, rápidas e bem construídas.">
+    <link rel="canonical" href="https://rnetoo.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rômulo P. Neto — Front-End Developer">
+    <meta property="og:description" content="Front-End Developer com formação em design e trajetória multidisciplinar.">
+    <meta property="og:image" content="assets/images/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="assets/images/rlogo.png">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@300,400,500,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+
+    <a href="#main" class="skip-link" data-i18n="skip">Pular para o conteúdo</a>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar" role="banner">
+        <nav class="nav-inner" aria-label="Navegação principal">
+            <a href="#hero" class="nav-logo" aria-label="Rômulo Pereira Neto — início">
+                <img src="assets/images/rlogo.png" alt="Logo RPN" class="nav-logo-img" width="66" height="46">
+                <span class="nav-logo-text">RPN</span>
+            </a>
+            <ul class="nav-links" role="list">
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experiência</a></li>
+                <li><a href="#education" class="nav-link" data-i18n="nav.education">Formação</a></li>
+                <li><a href="#blog" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+                <li><a href="#contact" class="nav-link nav-link--cta" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Mudar idioma para inglês" aria-pressed="false">
+                    <span class="lang-toggle-pt" aria-hidden="true">PT</span>
+                    <span class="lang-toggle-sep" aria-hidden="true">/</span>
+                    <span class="lang-toggle-en" aria-hidden="true">EN</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Ativar modo claro" aria-pressed="false">
+                    <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" fill="none">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <button class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
+        <ul role="list">
+            <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experiência</a></li>
+            <li><a href="#education" data-i18n="nav.education">Formação</a></li>
+            <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+        <div class="mobile-controls">
+            <button class="lang-toggle lang-toggle--mobile" id="lang-toggle-mobile" aria-label="Mudar idioma">PT /
+                EN</button>
+            <button class="theme-toggle theme-toggle--mobile" id="theme-toggle-mobile" aria-label="Mudar tema">
+                <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor"
+                    stroke-width="2" fill="none">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                </svg>
+                <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor"
+                    stroke-width="2" fill="none">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+
+        <!-- ══════ HERO ══════ -->
+        <section id="hero" class="hero" aria-labelledby="hero-name">
+            <div class="hero-grid-bg" aria-hidden="true"></div>
+            <div class="hero-orb" aria-hidden="true"></div>
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <div class="hero-badge" role="status" aria-live="polite">
+                        <span class="hero-badge-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.status">Disponível para projetos</span>
+                    </div>
+                    <h1 id="hero-name" class="hero-name">
+                        <span class="hero-name-first" aria-hidden="true">Rômulo</span>
+                        <span class="hero-name-last" aria-hidden="true">Pereira<em class="hero-name-accent">
+                                Neto</em></span>
+                        <span class="sr-only">Rômulo Pereira Neto</span>
+                    </h1>
+                    <p class="hero-role">
+                        <span class="hero-role-static" data-i18n="hero.role.prefix">Front-End Developer &amp;</span>
+                        <span class="hero-role-typing" id="typing-target" aria-live="polite"></span>
+                        <span class="hero-cursor" aria-hidden="true">|</span>
+                    </p>
+                    <p class="hero-tagline" data-i18n="hero.tagline">
+                        Desenvolvo com React, JavaScript e CSS. Trago junto um olhar treinado em composição,
+                        proporção e hierarquia visual — e a disciplina de quem documenta, planeja e entrega.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">
+                            <span>Ver Projetos</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" fill="none">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="assets/docs/cv-romulo-neto.pdf" download class="btn btn-ghost" data-i18n="hero.cta.cv">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" fill="none">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                    <div class="hero-meta" role="list" aria-label="Informações rápidas">
+                        <div class="hero-meta-item" role="listitem">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" fill="none">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Balneário Piçarras, SC</span>
+                        </div>
+                        <div class="hero-meta-item" role="listitem">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" fill="none">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8M12 17v4" />
+                            </svg>
+                            <span>React · JS · CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-photo-wrap">
+                        <div class="hero-photo-ring" aria-hidden="true"></div>
+                        <div class="hero-photo-ring hero-photo-ring--outer" aria-hidden="true"></div>
+                        <img src="assets/images/romulo-foto-perfil.jpg" alt="Foto de Rômulo Pereira Neto"
+                            class="hero-photo" width="400" height="500" loading="eager"
+                            onerror="this.style.display='none';document.getElementById('photo-fallback').style.display='flex'">
+                        <div id="photo-fallback" class="hero-photo-fallback" aria-hidden="true">
+                            <img src="assets/images/rlogo.png" alt="" width="80" height="80">
+                        </div>
+                        <div class="hero-card hero-card-tl" aria-hidden="true">
+                            <span class="hero-card-value">&lt;/&gt;</span>
+                            <span class="hero-card-label">HTML · CSS · JS</span>
+                        </div>
+                        <div class="hero-card hero-card-br" aria-hidden="true">
+                            <span class="hero-card-value">UI</span>
+                            <span class="hero-card-label">Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="scroll-indicator" aria-label="Rolar para sobre">
+                <span class="scroll-indicator-line" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- ══════ ABOUT ══════ -->
+        <section id="about" class="section about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="about.eyebrow">Sobre mim</span>
+                    <h2 id="about-title" class="section-title">
+                        <span data-i18n="about.title.line1">Multidisciplinar</span>
+                        <em data-i18n="about.title.line2">por escolha.</em>
+                    </h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-lead reveal" data-i18n="about.lead">
+                            Sou desenvolvedor front-end com formação em design e trajetória multidisciplinar.
+                            Escrevo código limpo, penso em componentes e me preocupo com o que o usuário
+                            sente ao interagir com uma interface.
+                        </p>
+                        <p class="about-body reveal" data-i18n="about.body">
+                            Minha formação em design de interiores me deu algo difícil de aprender no código: o olhar.
+                            A capacidade de perceber o que está fora de proporção, o que compete pela atenção,
+                            o que precisa de espaço para respirar — e o que o cliente realmente deseja.
+                            Essa base em composição, proporção, hierarquia visual e modelagem 3D
+                            se traduz diretamente em como estruturo layouts, escolho tipografia e tomo decisões de
+                            motion.
+                            No front-end, componentizar uma interface faz todo sentido para mim —
+                            é como montar um ambiente com peças que precisam ser coerentes entre si.
+                        </p>
+                        <blockquote class="about-quote reveal" data-i18n="about.quote">
+                            "Forma e função nunca se separam — no design de interiores aprendi isso com espaços. No
+                            front-end, aplico com código."
+                        </blockquote>
+                    </div>
+                    <div class="about-sidebar reveal">
+                        <div class="about-stats">
+                            <div class="about-stat">
+                                <span class="about-stat-num">2025</span>
+                                <span class="about-stat-label" data-i18n="about.stat.start">Início no front-end</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num">Design</span>
+                                <span class="about-stat-label" data-i18n="about.stat.background">Formação de base</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="about-stat-num">IA</span>
+                                <span class="about-stat-label" data-i18n="about.stat.ai">No fluxo de trabalho</span>
+                            </div>
+                        </div>
+                        <ul class="about-chips" aria-label="Tecnologias principais" role="list">
+                            <li class="chip">React</li>
+                            <li class="chip">JavaScript</li>
+                            <li class="chip">HTML5</li>
+                            <li class="chip">CSS3</li>
+                            <li class="chip">Tailwind</li>
+                            <li class="chip">Git</li>
+                            <li class="chip">Figma</li>
+                            <li class="chip">Motion</li>
+                        </ul>
+                        <div class="about-socials">
+                            <a href="https://github.com/Rnetoo" target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/romulo-pereira-de-souza-neto/" target="_blank"
+                                rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </a>
+                            <a href="mailto:romulo.psnw@gmail.com" class="social-link" aria-label="Email">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════ PROJECTS ══════ -->
+        <section id="projects" class="section projects" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="projects.eyebrow">Portfólio</span>
+                    <h2 id="projects-title" class="section-title">
+                        <span data-i18n="projects.title.line1">Trabalhos</span>
+                        <em data-i18n="projects.title.line2">selecionados.</em>
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Carrossel — fora do container para ocupar full-width -->
+            <div class="carousel-wrap reveal">
+
+                <!-- Dica de scroll -->
+                <div class="carousel-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span>role para navegar</span>
+                </div>
+
+                <div class="carousel" id="projects-carousel" role="list" aria-label="Projetos de front-end">
+
+                    <!-- ── CARD 01 — placeholder ── -->
+                    <article class="carousel-card" role="listitem">
+                        <a href="#" class="carousel-card-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ver projeto 01">
+                            <!-- Thumbnail -->
+                            <div class="carousel-thumb">
+                                <div class="carousel-thumb-placeholder" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                                        <path d="M8 21h8M12 17v4" />
+                                    </svg>
+                                </div>
+                                <!-- Substituir por: <img src="assets/images/thumb-projeto-01.png" alt="..."> -->
+                                <div class="carousel-thumb-overlay" aria-hidden="true"></div>
+                                <span class="carousel-status carousel-status--wip">Em breve</span>
+                            </div>
+                            <!-- Info -->
+                            <div class="carousel-info">
+                                <div class="carousel-info-top">
+                                    <span class="carousel-num" aria-hidden="true">01</span>
+                                    <h3 class="carousel-title">Título do Projeto</h3>
+                                    <p class="carousel-desc">Descrição curta do projeto. O que ele faz, qual problema
+                                        resolve.</p>
+                                </div>
+                                <div class="carousel-info-bottom">
+                                    <ul class="carousel-tags" role="list">
+                                        <li class="tag">HTML</li>
+                                        <li class="tag">CSS</li>
+                                        <li class="tag">JS</li>
+                                    </ul>
+                                    <div class="carousel-links">
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                                            </svg>
+                                        </span>
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- ── CARD 02 — placeholder ── -->
+                    <article class="carousel-card" role="listitem">
+                        <a href="#" class="carousel-card-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ver projeto 02">
+                            <div class="carousel-thumb">
+                                <div class="carousel-thumb-placeholder" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                                        <path d="M8 21h8M12 17v4" />
+                                    </svg>
+                                </div>
+                                <div class="carousel-thumb-overlay" aria-hidden="true"></div>
+                                <span class="carousel-status carousel-status--wip">Em breve</span>
+                            </div>
+                            <div class="carousel-info">
+                                <div class="carousel-info-top">
+                                    <span class="carousel-num" aria-hidden="true">02</span>
+                                    <h3 class="carousel-title">Título do Projeto</h3>
+                                    <p class="carousel-desc">Descrição curta do projeto. O que ele faz, qual problema
+                                        resolve.</p>
+                                </div>
+                                <div class="carousel-info-bottom">
+                                    <ul class="carousel-tags" role="list">
+                                        <li class="tag">React</li>
+                                        <li class="tag">Tailwind</li>
+                                    </ul>
+                                    <div class="carousel-links">
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                                            </svg>
+                                        </span>
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- ── CARD 03 — placeholder ── -->
+                    <article class="carousel-card" role="listitem">
+                        <a href="#" class="carousel-card-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ver projeto 03">
+                            <div class="carousel-thumb">
+                                <div class="carousel-thumb-placeholder" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2" fill="none">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                                        <path d="M8 21h8M12 17v4" />
+                                    </svg>
+                                </div>
+                                <div class="carousel-thumb-overlay" aria-hidden="true"></div>
+                                <span class="carousel-status carousel-status--wip">Em breve</span>
+                            </div>
+                            <div class="carousel-info">
+                                <div class="carousel-info-top">
+                                    <span class="carousel-num" aria-hidden="true">03</span>
+                                    <h3 class="carousel-title">Título do Projeto</h3>
+                                    <p class="carousel-desc">Descrição curta do projeto. O que ele faz, qual problema
+                                        resolve.</p>
+                                </div>
+                                <div class="carousel-info-bottom">
+                                    <ul class="carousel-tags" role="list">
+                                        <li class="tag">CSS</li>
+                                        <li class="tag">Motion</li>
+                                    </ul>
+                                    <div class="carousel-links">
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                                            </svg>
+                                        </span>
+                                        <span class="carousel-link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" fill="none">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- ── CARD "+ Em breve" ── -->
+                    <article class="carousel-card carousel-card--upcoming" role="listitem"
+                        aria-label="Mais projetos em breve">
+                        <div class="carousel-upcoming-inner">
+                            <div class="carousel-upcoming-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="16" />
+                                    <line x1="8" y1="12" x2="16" y2="12" />
+                                </svg>
+                            </div>
+                            <p class="carousel-upcoming-text">Mais projetos<br>em breve</p>
+                        </div>
+                    </article>
+
+                </div><!-- /carousel -->
+
+                <!-- Barra de progresso do carrossel -->
+                <div class="carousel-progress" aria-hidden="true">
+                    <div class="carousel-progress-bar" id="carousel-progress-bar"></div>
+                </div>
+
+            </div><!-- /carousel-wrap -->
+
+            <div class="container">
+                <div class="projects-footer reveal">
+                    <a href="https://github.com/Rnetoo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"
+                        data-i18n="projects.github">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" fill="none">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        Ver todos no GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════ SKILLS ══════ -->
+        <section id="skills" class="section skills" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="skills.eyebrow">Competências</span>
+                    <h2 id="skills-title" class="section-title">
+                        <span data-i18n="skills.title.line1">Stack &amp;</span>
+                        <em data-i18n="skills.title.line2">especialidades.</em>
+                    </h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="skill-group-icon" aria-hidden="true">⬡</span>
+                            Front-End</h3>
+                        <ul class="skill-list" role="list">
+                            <li class="skill-item"><span class="skill-name">HTML5 / CSS3</span>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                    aria-valuemax="100" aria-label="HTML CSS: 40%">
+                                    <div class="skill-bar-fill" data-width="40"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">JavaScript</span>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                                    aria-valuemax="100" aria-label="JavaScript: 30%">
+                                    <div class="skill-bar-fill" data-width="30"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">React</span>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                    aria-valuemax="100" aria-label="React: 20%">
+                                    <div class="skill-bar-fill" data-width="20"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">Tailwind CSS</span>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                    aria-valuemax="100" aria-label="Tailwind: 20%">
+                                    <div class="skill-bar-fill" data-width="20"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"><span class="skill-name">Motion / a11y</span>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100" aria-label="Motion e acessibilidade: 25%">
+                                    <div class="skill-bar-fill" data-width="25"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skill-group skill-group--focus reveal">
+                        <h3 class="skill-group-title"><span class="skill-group-icon" aria-hidden="true">⬡</span> <span
+                                data-i18n="skills.focus">Foco técnico</span></h3>
+                        <ul class="focus-list" role="list">
+                            <li class="focus-item"><span class="focus-icon" aria-hidden="true">→</span>
+                                <div><strong data-i18n="skills.focus.motion">Animações &amp; Motion</strong>
+                                    <p data-i18n="skills.focus.motion.desc">Uso CSS transitions e keyframes para criar
+                                        movimento com propósito — cada animação orienta, confirma ou dá ritmo
+                                        à interface. Nenhum pixel se move sem motivo.</p>
+                                </div>
+                            </li>
+                            <li class="focus-item"><span class="focus-icon" aria-hidden="true">→</span>
+                                <div><strong data-i18n="skills.focus.a11y">Acessibilidade (a11y)</strong>
+                                    <p data-i18n="skills.focus.a11y.desc">HTML semântico, contraste, foco visível e
+                                        leitores de tela fazem parte do processo desde o início — não são ajustes
+                                        de última hora. WCAG AA como piso, não como teto.</p>
+                                </div>
+                            </li>
+                            <li class="focus-item"><span class="focus-icon" aria-hidden="true">→</span>
+                                <div><strong data-i18n="skills.focus.ds">Design Systems</strong>
+                                    <p data-i18n="skills.focus.ds.desc">Penso em componentes da mesma forma que
+                                        pensava em móveis: peças que precisam funcionar sozinhas e também juntas.
+                                        Tokens, variáveis e consistência visual não são detalhes — são estrutura.</p>
+                                </div>
+                            </li>
+                            <li class="focus-item"><span class="focus-icon" aria-hidden="true">→</span>
+                                <div><strong data-i18n="skills.focus.perf">Performance</strong>
+                                    <p data-i18n="skills.focus.perf.desc">Interface lenta é interface que desrespeita
+                                        o usuário. Acompanho Core Web Vitals, evito reflows desnecessários e trato
+                                        tempo de carregamento como critério de qualidade — não como otimização futura.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="soft-skills-card reveal">
+                    <h3 class="soft-skills-title">
+                        <span class="skill-group-icon" aria-hidden="true">⬡</span>
+                        Soft Skills
+                    </h3>
+                    <ul class="soft-skills-list" role="list">
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Trabalho em equipe</strong>
+                                <p>Colaboro bem, ouço antes de opinar e entendo que bons resultados costumam ser
+                                    coletivos.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 8v4l3 3" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Resolução de problemas</strong>
+                                <p>Gosto de entender a causa antes de partir para a solução — código é consequência de
+                                    clareza.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <polyline points="23 4 23 10 17 10" />
+                                    <path d="M20.49 15a9 9 0 1 1-.18-6.5" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Adaptabilidade</strong>
+                                <p>Trajetória multidisciplinar me ensinou a aprender rápido e mudar de contexto sem
+                                    perder o foco.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <path d="M12 2a10 10 0 1 0 10 10" />
+                                    <path d="M12 8a4 4 0 0 1 4-4h4v4a4 4 0 0 1-4 4" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Criatividade</strong>
+                                <p>Design de interiores me treinou para encontrar soluções dentro de restrições — no
+                                    front-end não é diferente.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Comunicação</strong>
+                                <p>Sei traduzir necessidades técnicas para linguagem acessível — e vice-versa. Já
+                                    trabalhei direto com clientes finais.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Autonomia &amp; Proatividade</strong>
+                                <p>Aprendo por conta própria, documento o que faço e não espero ser cobrado para
+                                    antecipar o que precisa ser feito.</p>
+                            </div>
+                        </li>
+                        <li class="soft-skill-item">
+                            <span class="soft-skill-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    fill="none">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                            </span>
+                            <div>
+                                <strong>Atenção aos detalhes</strong>
+                                <p>Percebo o pixel fora do lugar, o espaçamento inconsistente, o contraste insuficiente.
+                                    É um hábito do design que o código só reforçou.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════ EXPERIENCE ══════ -->
+        <section id="experience" class="section experience" aria-labelledby="exp-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="exp.eyebrow">Trajetória</span>
+                    <h2 id="exp-title" class="section-title">
+                        <span data-i18n="exp.title.line1">Experiência</span>
+                        <em data-i18n="exp.title.line2">profissional.</em>
+                    </h2>
+                </div>
+                <ol class="timeline" aria-label="Histórico profissional">
+                    <li class="tl-item reveal">
+                        <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span><span
+                                class="tl-line"></span></div>
+                        <article class="tl-card">
+                            <header class="tl-header">
+                                <span class="tl-badge tl-badge--current" data-i18n="exp.current">● Atual</span>
+                                <time class="tl-period" datetime="2025">2025 – presente</time>
+                            </header>
+                            <h3 class="tl-role" data-i18n="exp.e0.role">Web Design &amp; Desenvolvimento Front-End</h3>
+                            <p class="tl-company">Autônomo · Remoto</p>
+                            <p class="tl-desc" data-i18n="exp.e0.desc">Desenvolvimento de interfaces web com foco em
+                                experiência do usuário, acessibilidade e motion design. Construção de páginas e
+                                componentes com HTML, CSS e JavaScript — aplicando na prática os fundamentos de
+                                engenharia de software estudados no curso de ADS. Cada projeto é uma oportunidade
+                                de fechar o ciclo entre o olhar do design e a precisão do código.</p>
+                            <ul class="tl-tags" role="list">
+                                <li class="tag">HTML5</li>
+                                <li class="tag">CSS3</li>
+                                <li class="tag">JavaScript</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Tailwind</li>
+                                <li class="tag">Git</li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span><span
+                                class="tl-line"></span></div>
+                        <article class="tl-card">
+                            <header class="tl-header">
+                                <span class="tl-badge tl-badge--current" data-i18n="exp.current">● Atual</span>
+                                <time class="tl-period" datetime="2022">2022 – presente</time>
+                            </header>
+                            <h3 class="tl-role" data-i18n="exp.e1.role">Designer de Interiores</h3>
+                            <p class="tl-company" data-i18n="exp.e1.company">Autônomo · Remoto/Híbrido</p>
+                            <p class="tl-desc" data-i18n="exp.e1.desc">Projetos residenciais e comerciais do conceito à
+                                entrega. Modelagem 3D de móveis e layouts, renderização fotorrealista com Lumion e
+                                V-Ray, documentação técnica em CAD. Cada projeto começa com escuta — e termina com um
+                                ambiente que parece inevitável.</p>
+                            <ul class="tl-tags" role="list">
+                                <li class="tag">AutoCAD</li>
+                                <li class="tag">SketchUp</li>
+                                <li class="tag">V-Ray</li>
+                                <li class="tag">Lumion</li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span><span
+                                class="tl-line"></span></div>
+                        <article class="tl-card">
+                            <header class="tl-header">
+                                <time class="tl-period" datetime="2022-10/2025-10">Out 2022 – Out 2025</time>
+                            </header>
+                            <h3 class="tl-role" data-i18n="exp.e2.role">Operação e Gestão de Processos</h3>
+                            <p class="tl-company">Cordazzos · Balneário Piçarras, SC</p>
+                            <p class="tl-desc" data-i18n="exp.e2.desc">Gestão de operação em ambiente de alta demanda.
+                                Padronização de processos, controle de insumos e qualidade. Aprendi que um sistema bem
+                                projetado — seja um fluxo de trabalho ou um componente React — precisa funcionar sem
+                                depender de improviso.</p>
+                            <ul class="tl-tags" role="list">
+                                <li class="tag" data-i18n="exp.tag.std">Padronização</li>
+                                <li class="tag" data-i18n="exp.tag.stock">Gestão de Estoque</li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li class="tl-item reveal">
+                        <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span><span
+                                class="tl-line"></span></div>
+                        <article class="tl-card">
+                            <header class="tl-header">
+                                <time class="tl-period" datetime="2018-10/2020-11">Out 2018 – Nov 2020</time>
+                            </header>
+                            <h3 class="tl-role" data-i18n="exp.e3.role">Técnico de Laboratório</h3>
+                            <p class="tl-company">BRK Ambiental · Caçador, SC</p>
+                            <p class="tl-desc" data-i18n="exp.e3.desc">Ensaios físico-químicos e controle de qualidade
+                                da água. Precisão analítica, registro de dados e atenção a padrões — habilidades que
+                                hoje se traduzem em código legível, testes e documentação.</p>
+                            <ul class="tl-tags" role="list">
+                                <li class="tag">Ensaios Físico-Químicos</li>
+                                <li class="tag">Normas Ambientais</li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li class="tl-item reveal tl-item--muted">
+                        <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+                        <article class="tl-card">
+                            <header class="tl-header">
+                                <time class="tl-period" datetime="2011-06/2015-05">Jun 2011 – Mai 2015</time>
+                            </header>
+                            <h3 class="tl-role" data-i18n="exp.e4.role">Coordenador de ETA e ETE</h3>
+                            <p class="tl-company">VIPOSA S/A · Caçador, SC</p>
+                            <p class="tl-desc" data-i18n="exp.e4.desc">Coordenação de tratamento de água e efluentes,
+                                controle de dosagem química e elaboração de relatórios técnicos. Gestão de processos
+                                críticos com margem mínima para erro — formação que moldou minha disciplina de processo
+                                e atenção a consequências.</p>
+                        </article>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ══════ EDUCATION ══════ -->
+        <section id="education" class="section education" aria-labelledby="edu-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="edu.eyebrow">Educação</span>
+                    <h2 id="edu-title" class="section-title">
+                        <span data-i18n="edu.title.line1">Formação</span>
+                        <em data-i18n="edu.title.line2">acadêmica.</em>
+                    </h2>
+                </div>
+                <div class="edu-grid">
+                    <article class="edu-card edu-card--featured reveal">
+                        <div class="edu-card-glow" aria-hidden="true"></div>
+                        <span class="edu-status" data-i18n="edu.ongoing">Em andamento</span>
+                        <div class="edu-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                fill="none">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                        </div>
+                        <h3 class="edu-degree" data-i18n="edu.e1.degree">Análise e Desenvolvimento de Sistemas</h3>
+                        <p class="edu-institution">Estácio</p>
+                        <p class="edu-desc" data-i18n="edu.e1.desc">
+                            Formação técnica em andamento com foco em engenharia de software, algoritmos,
+                            estruturas de dados e banco de dados. O curso fecha o ciclo entre o que já pratico
+                            no código e a fundamentação teórica que sustenta decisões de arquitetura,
+                            qualidade e escalabilidade — tornando a prática mais sólida e consciente.
+                        </p>
+                    </article>
+                    <article class="edu-card reveal">
+                        <div class="edu-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                fill="none">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </div>
+                        <h3 class="edu-degree" data-i18n="edu.e2.degree">Tecnólogo em Design de Interiores</h3>
+                        <p class="edu-institution">SENAC</p>
+                        <p class="edu-desc" data-i18n="edu.e2.desc">Onde o olhar foi formado. Composição, proporção,
+                            desenho técnico e modelagem 3D — a base visual que carrego para cada interface que construo.
+                        </p>
+                    </article>
+                    <article class="edu-card reveal">
+                        <div class="edu-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                fill="none">
+                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                <path d="M12 8v4l3 3" />
+                            </svg>
+                        </div>
+                        <h3 class="edu-degree" data-i18n="edu.e3.degree">Técnico em Meio Ambiente</h3>
+                        <p class="edu-institution">SENAI</p>
+                        <p class="edu-desc" data-i18n="edu.e3.desc">Gestão ambiental e controle de processos. Ensinou
+                            que boas práticas não são opcionais — são a diferença entre algo que funciona e algo que
+                            dura.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════ BLOG ══════ -->
+        <section id="blog" class="section blog" aria-labelledby="blog-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="blog.eyebrow">Pensamentos</span>
+                    <h2 id="blog-title" class="section-title">
+                        <span data-i18n="blog.title.line1">Blog</span>
+                        <em data-i18n="blog.title.line2">&amp; reflexões.</em>
+                    </h2>
+                    <p class="section-sub reveal" data-i18n="blog.sub">Artigos sobre front-end, acessibilidade, motion
+                        design e desenvolvimento de interfaces.</p>
+                </div>
+
+                <!-- Lista de artigos -->
+                <ol class="blog-list" role="list">
+
+                    <!-- Artigo 01 — WCAG -->
+                    <li class="blog-post-item reveal">
+                        <article class="blog-post-card">
+                            <a href="blog/wcag-no-frontend.html" class="blog-post-link"
+                                aria-label="Ler artigo: WCAG no Front-End">
+
+                                <!-- Número decorativo -->
+                                <span class="blog-post-num" aria-hidden="true">01</span>
+
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <time datetime="2026-03-07" class="blog-post-date">7 de março de 2026</time>
+                                        <span class="blog-post-read">8 min de leitura</span>
+                                    </div>
+                                    <h3 class="blog-post-title">
+                                        WCAG no Front-End: o que é, por que importa e como aplicar na prática
+                                    </h3>
+                                    <p class="blog-post-excerpt">
+                                        As WCAG definem como criar interfaces que possam ser usadas por todas as
+                                        pessoas.
+                                        Entenda os quatro princípios fundamentais e veja exemplos práticos de código.
+                                    </p>
+                                    <ul class="blog-post-tags" role="list" aria-label="Tags">
+                                        <li class="tag">Acessibilidade</li>
+                                        <li class="tag">Front-End</li>
+                                        <li class="tag">WCAG</li>
+                                        <li class="tag">HTML Semântico</li>
+                                    </ul>
+                                </div>
+
+                                <span class="blog-post-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" fill="none" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+
+                            </a>
+                        </article>
+                    </li>
+
+                    <!-- Artigo 02 — Tailwind CSS -->
+                    <li class="blog-post-item reveal">
+                        <article class="blog-post-card">
+                            <a href="blog/tailwind-css.html" class="blog-post-link"
+                                aria-label="Ler artigo: Tailwind CSS">
+
+                                <span class="blog-post-num" aria-hidden="true">02</span>
+
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <time datetime="2026-03-07" class="blog-post-date">7 de março de 2026</time>
+                                        <span class="blog-post-read">6 min de leitura</span>
+                                    </div>
+                                    <h3 class="blog-post-title">
+                                        Tailwind CSS: o que é, como funciona e por que tantos desenvolvedores estão
+                                        usando
+                                    </h3>
+                                    <p class="blog-post-excerpt">
+                                        Entenda a abordagem utility-first e veja exemplos práticos de como o Tailwind
+                                        acelera o desenvolvimento de interfaces modernas.
+                                    </p>
+                                    <ul class="blog-post-tags" role="list" aria-label="Tags">
+                                        <li class="tag">Tailwind CSS</li>
+                                        <li class="tag">Front-End</li>
+                                        <li class="tag">CSS</li>
+                                        <li class="tag">Utility-First</li>
+                                    </ul>
+                                </div>
+
+                                <span class="blog-post-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" fill="none" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+
+                            </a>
+                        </article>
+                    </li>
+
+                    <!-- Artigo 03 — Motion Design -->
+                    <li class="blog-post-item reveal">
+                        <article class="blog-post-card">
+                            <a href="blog/motion-design-frontend.html" class="blog-post-link"
+                                aria-label="Ler artigo: Motion Design no Front-End">
+
+                                <span class="blog-post-num" aria-hidden="true">03</span>
+
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <time datetime="2026-03-07" class="blog-post-date">7 de março de 2026</time>
+                                        <span class="blog-post-read">7 min de leitura</span>
+                                    </div>
+                                    <h3 class="blog-post-title">
+                                        Motion Design no Front-End: conceitos básicos para criar interfaces mais
+                                        dinâmicas
+                                    </h3>
+                                    <p class="blog-post-excerpt">
+                                        Entenda como usar animações CSS para comunicar estados, orientar o usuário
+                                        e criar interfaces mais polidas — com exemplos práticos de fade, scale e slide.
+                                    </p>
+                                    <ul class="blog-post-tags" role="list" aria-label="Tags">
+                                        <li class="tag">Motion Design</li>
+                                        <li class="tag">Front-End</li>
+                                        <li class="tag">Animações</li>
+                                        <li class="tag">CSS</li>
+                                    </ul>
+                                </div>
+
+                                <span class="blog-post-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" fill="none" aria-hidden="true">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+
+                            </a>
+                        </article>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+
+        <!-- ══════ CONTACT ══════ -->
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow" data-i18n="contact.eyebrow">Contato</span>
+                    <h2 id="contact-title" class="section-title">
+                        <span data-i18n="contact.title.line1">Vamos</span>
+                        <em data-i18n="contact.title.line2">conversar.</em>
+                    </h2>
+                </div>
+                <div class="contact-grid">
+                    <address class="contact-info reveal">
+                        <p class="contact-intro" data-i18n="contact.intro">Aberto a oportunidades CLT, projetos
+                            freelance e boas conversas sobre tecnologia.</p>
+                        <div class="contact-links">
+                            <a href="mailto:romulo.psnw@gmail.com" class="contact-link">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                romulo.psnw@gmail.com
+                            </a>
+                            <a href="tel:+5549999083606" class="contact-link">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                (49) 99908-3606
+                            </a>
+                            <a href="https://www.linkedin.com/in/romulo-pereira-de-souza-neto/" target="_blank"
+                                rel="noopener noreferrer" class="contact-link">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" fill="none">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </address>
+                    <div class="contact-form-wrap reveal">
+                        <form id="contact-form" action="https://formspree.io/f/xaqdowby" method="POST" novalidate
+                            aria-label="Formulário de contato">
+                            <div class="form-group">
+                                <label for="nome" class="form-label" data-i18n="contact.form.name">Nome</label>
+                                <input id="nome" type="text" name="nome" required autocomplete="name" class="form-input"
+                                    aria-required="true" placeholder="Seu nome completo"
+                                    data-i18n-placeholder="contact.form.name.ph">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" type="email" name="email" required autocomplete="email"
+                                    class="form-input" aria-required="true" placeholder="seu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem" class="form-label"
+                                    data-i18n="contact.form.message">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" required class="form-textarea"
+                                    aria-required="true" placeholder="Sua mensagem…"
+                                    data-i18n-placeholder="contact.form.message.ph"></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Novo contato — portfólio v2">
+                            <button type="submit" class="btn btn-primary btn-submit" data-i18n="contact.form.send">
+                                <span>Enviar Mensagem</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" fill="none">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-inner">
+            <a href="#hero" class="footer-logo" aria-label="Voltar ao topo">
+                <img src="assets/images/rlogo.png" alt="Logo RPN" width="32" height="32">
+                <span>Rômulo Pereira Neto</span>
+            </a>
+            <nav aria-label="Links rápidos do rodapé">
+                <ul class="footer-links" role="list">
+                    <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
+                </ul>
+            </nav>
+            <p class="footer-copy"><small>&copy; 2026 Rômulo Pereira Neto — HTML · CSS · JavaScript</small></p>
+        </div>
+    </footer>
+
+
+
+    <script src="js/loader.js"></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/typing.js" defer></script>
+    <script src="js/counters.js" defer></script>
+    <script src="js/form.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+
+    <!-- Botão voltar ao topo -->
+    <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            fill="none">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
+</body>
+
+</html>
